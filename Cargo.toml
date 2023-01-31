@@ -8,3 +8,12 @@ edition = "2021"
 [dependencies]
 color-eyre = "0.6.2"
 rand = "0.8.5"
+
+# optimize for reasonable compile speed
+[profile.release]
+strip = "symbols"
+lto = "thin"
+opt-level = 3
+debug = 0
+overflow-checks = false
+panic = "abort"
